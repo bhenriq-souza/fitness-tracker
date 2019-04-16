@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { CurrentTrainingComponent } from './current-training/current-training.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [CurrentTrainingComponent],
   imports: [
     CommonModule
   ]
