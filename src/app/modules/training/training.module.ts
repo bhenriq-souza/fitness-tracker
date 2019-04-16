@@ -4,10 +4,13 @@ import { CurrentTrainingComponent } from './current-training/current-training.co
 import { NewTrainingComponent } from './new-training/new-training.component';
 import { PastTrainingsComponent } from './past-trainings/past-trainings.component';
 
+import { TrainingRoutingModule } from './_routing/training.routing.module';
+
 @NgModule({
   declarations: [CurrentTrainingComponent, NewTrainingComponent, PastTrainingsComponent],
   imports: [
-    CommonModule
+    CommonModule,
+    TrainingRoutingModule
   ]
 })
 export class TrainingModule { }
