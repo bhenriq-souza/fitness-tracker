@@ -1,11 +1,9 @@
 import { Routes } from '@angular/router';
 
-import { HomeComponent } from '../components';
-
 export const ROUTES: Routes = [
     {
         path: '',
-        component: HomeComponent
+        loadChildren: '../modules/home/home.module#HomeModule'
     },
     {
         path: 'auth',

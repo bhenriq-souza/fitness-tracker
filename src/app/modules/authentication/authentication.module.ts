@@ -4,6 +4,7 @@ import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 
 import { AuthenticationRoutingModule } from './_routing/authentication.routing.module';
+import { AppMaterialModule } from '../../app-material/app-material.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +13,8 @@ import { AuthenticationRoutingModule } from './_routing/authentication.routing.m
   ],
   imports: [
     CommonModule,
-    AuthenticationRoutingModule
+    AuthenticationRoutingModule,
+    AppMaterialModule
   ]
 })
 export class AuthenticationModule { }
