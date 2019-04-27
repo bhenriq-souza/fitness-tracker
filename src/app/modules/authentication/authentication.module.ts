@@ -1,9 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { FlexLayoutModule } from '@angular/flex-layout';
+
+/*** App Module */
+import { AppMaterialModule } from '../../app-material/app-material.module';
+
+/*** Route Module */
+import { AuthenticationRoutingModule } from './_routing/authentication.routing.module';
+
+/** Module Components */
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
-
-import { AuthenticationRoutingModule } from './_routing/authentication.routing.module';
 
 @NgModule({
   declarations: [
@@ -12,7 +20,10 @@ import { AuthenticationRoutingModule } from './_routing/authentication.routing.m
   ],
   imports: [
     CommonModule,
-    AuthenticationRoutingModule
+    AuthenticationRoutingModule,
+    AppMaterialModule,
+    FlexLayoutModule,
+    FormsModule
   ]
 })
 export class AuthenticationModule { }

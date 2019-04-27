@@ -1,0 +1,39 @@
+/* ************** FLEX BOX INTRO ************** */
+
+.container {
+    display: flex;
+    width: 100%;
+    height: 700px;
+    border: 1px solid black;
+    /* default: row. Tells to the container to display in column */
+    /* The main axis follow the direction setted here */
+    flex-direction: column;    
+    justify-content: center; /* drives the alignment to the main axis */
+    align-items: center; /* drives the alignment to the cross axis */
+}
+
+.child {
+    width: 200px;
+    height: 200px;
+    /* flex: 1; all child take the available space and distributes it equaly */
+}
+
+.child1 {
+    background-color: red;
+    /* flex: 2; takes twice much space then others */
+}
+
+.child2 {
+    background-color: green;
+}
+
+.child3 {
+    background-color: blue;
+}
+
+/* ****************************************** */
+
+
+mat-form-field {
+    width: 300px;
+}
