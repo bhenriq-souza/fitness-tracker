@@ -1,7 +1,73 @@
 <section>
-  <form action="">
+  <form 
+      action="" 
+      fxLayout="column" 
+      fxLayoutAlign="center center"
+      fxLayoutGap="10px"
+      #form="ngForm"
+      (ngSubmit)="signupForm.functions.submit(form)">
     <mat-form-field>
-      <input type="email" matInput placeholder="Email">
+      <input 
+        type="{{ signupForm.inputs.email.type }}" 
+        matInput 
+        placeholder="{{ signupForm.inputs.email.placeholder }}"
+        ngModel 
+        name="{{ signupForm.inputs.email.name }}"
+        email="signupForm.inputs.email.type === 'email'"
+        required="{{ signupForm.inputs.email.validation.required }}">
+      <mat-error>{{ signupForm.inputs.email.errors.emailNotValid }}</mat-error>
     </mat-form-field>
+    <mat-form-field
+      hintLabel="{{ signupForm.inputs.password.hints.minLength }}">
+      <input 
+        type="{{ signupForm.inputs.password.type }}" 
+        matInput 
+        placeholder="{{ signupForm.inputs.password.placeholder }}"
+        ngModel 
+        name="{{ signupForm.inputs.password.name }}"
+        password="signupForm.inputs.password.type === 'password'"
+        required="{{ signupForm.inputs.password.validation.required }}"
+        minlength="{{ signupForm.inputs.password.validation.minLength }}"
+        #passwordInput="ngModel">
+      <mat-hint 
+        align="end"> {{ signupForm.inputs.password.hints.minLengthVerification(passwordInput.value?.length) }}</mat-hint>
+      <mat-error>{{ signupForm.inputs.password.errors.passwordNotValid }}</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input
+        matInput 
+        [matDatepicker]="picker"
+        placeholder="{{ signupForm.inputs.birthdate.label }}"
+        [max]="minDate"
+        required="{{ signupForm.inputs.birthdate.validation.required }}"
+        ngModel
+        name="{{ signupForm.inputs.birthdate.name }}">
+      <mat-datepicker-toggle 
+        matSuffix 
+        [for]="picker" ></mat-datepicker-toggle>
+      <mat-datepicker 
+        #picker></mat-datepicker>
+      <mat-error>{{ signupForm.inputs.birthdate.errors.birthdateNotValid }}</mat-error>
+    </mat-form-field>
+    <mat-checkbox
+      ngModel
+      required="{{ signupForm.inputs.agree.validation.required }}"
+      name="{{ signupForm.inputs.agree.name }}"
+      color="{{ signupForm.inputs.agree.color }}"
+      #agree="ngModel">
+      {{ signupForm.inputs.agree.label }}</mat-checkbox>
+    <mat-error 
+      *ngIf="agree.touched && !agree.valid">{{ signupForm.inputs.agree.errors.agreeNotValid }}</mat-error>
+    <button
+      type="{{ signupForm.buttons.signup.type }}"
+      mat-raised-button 
+      color="{{ signupForm.buttons.signup.color }}"
+      [disabled]="form.invalid">{{ signupForm.buttons.signup.label }}</button>
   </form>
 </section>
+<!-- FLEX BOX INTRO -->
+<!-- <section class="container">
+  <div class="child1 child">Teste 1</div>
+  <div class="child2 child">Teste 2</div>
+  <div class="child3 child">Teste 3</div>
+</section> -->
