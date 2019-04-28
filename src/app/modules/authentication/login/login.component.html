@@ -1,3 +1,28 @@
-<p>
-  login works!
-</p>
+<section>
+  <form 
+      [formGroup]="loginForm"
+      fxLayout="column" 
+      fxLayoutAlign="center center"
+      fxLayoutGap="10px"
+      (ngSubmit)="login.functions.submit()">
+    <mat-form-field>
+      <input 
+        type="{{ login.inputs.email.type }}" 
+        matInput 
+        placeholder="{{ login.inputs.email.placeholder }}"
+        formControlName="email">
+    </mat-form-field>
+    <mat-form-field>
+      <input 
+        type="{{ login.inputs.password.type }}" 
+        matInput 
+        placeholder="{{ login.inputs.password.placeholder }}"
+        formControlName="password">
+    </mat-form-field>
+    <button
+      type="{{ login.buttons.signup.type }}"
+      mat-raised-button 
+      color="{{ login.buttons.signup.color }}"
+      [disabled]="!loginForm.valid">{{ login.buttons.signup.label }}</button>
+  </form>
+</section>

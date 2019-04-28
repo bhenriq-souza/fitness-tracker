@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
+import { ReactiveFormsModule } from '@angular/forms';
 
 /*** App Module */
 import { AppMaterialModule } from '../../app-material/app-material.module';
@@ -23,7 +24,8 @@ import { LoginComponent } from './login/login.component';
     AuthenticationRoutingModule,
     AppMaterialModule,
     FlexLayoutModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ]
 })
 export class AuthenticationModule { }
