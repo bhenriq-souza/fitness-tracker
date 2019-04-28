@@ -3,10 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
+/** App Dependencies */
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppMaterialModule } from './app-material/app-material.module';
-
+import { AppLayoutModule } from './modules/layout/layout.module';
 import { DateLocaleProvider } from '../app/_helpers'
 
 @NgModule({
@@ -18,7 +19,8 @@ import { DateLocaleProvider } from '../app/_helpers'
     BrowserAnimationsModule,
     AppMaterialModule,
     AppRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    AppLayoutModule
   ],
   providers: [
     DateLocaleProvider
