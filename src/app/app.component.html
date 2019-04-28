@@ -1,1 +1,14 @@
-<router-outlet></router-outlet>
+<mat-sidenav-container>
+    <mat-sidenav #sidenav role="navigation">
+        <p>Hello, sidenav</p>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <button>Show sidenav</button>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+
+<!-- 
+    As an exercise, uncouple the mat-sidenav-container in a top-level component, which will nest 
+    the router-outlet
+-->
