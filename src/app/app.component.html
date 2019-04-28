@@ -3,7 +3,7 @@
         <p>Hello, sidenav</p>
     </mat-sidenav>
     <mat-sidenav-content>
-        <button>Show sidenav</button>
+        <button (click)="sidenav.toggle()">Show sidenav</button>
         <router-outlet></router-outlet>
     </mat-sidenav-content>
 </mat-sidenav-container>
