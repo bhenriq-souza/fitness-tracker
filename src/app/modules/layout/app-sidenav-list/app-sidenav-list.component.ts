@@ -1,18 +1,19 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
-  selector: 'app-toolbar',
-  templateUrl: './app-toolbar.component.html',
-  styleUrls: ['./app-toolbar.component.css']
+  selector: 'app-sidenav-list',
+  templateUrl: './app-sidenav-list.component.html',
+  styleUrls: ['./app-sidenav-list.component.css']
 })
-export class AppToolbarComponent implements OnInit {
+export class AppSideNavListComponent implements OnInit {
   @Output() sidenavToggle: EventEmitter<void> = new EventEmitter<void>();
 
   constructor() { }
 
   ngOnInit() { }
 
-  onToggleSidenav() {
+  onClose() {
     this.sidenavToggle.emit();
   }
+
 }

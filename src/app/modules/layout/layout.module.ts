@@ -1,24 +1,28 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 /*** App Module */
 import { AppMaterialModule } from '../../app-material/app-material.module';
 
 /** Module Components */
-import { AppSideNavComponent } from './app-sidenav/app-sidenav.component';
+import { AppSideNavListComponent } from './app-sidenav-list/app-sidenav-list.component';
 import { AppToolbarComponent } from './app-toolbar/app-toolbar.component';
 
 @NgModule({
   declarations: [
-    AppSideNavComponent, 
+    AppSideNavListComponent, 
     AppToolbarComponent
   ],
   imports: [
     CommonModule,
-    AppMaterialModule
+    AppMaterialModule,
+    FlexLayoutModule,
+    RouterModule
   ],
   exports: [
-    AppSideNavComponent,
+    AppSideNavListComponent,
     AppToolbarComponent
   ]
 })

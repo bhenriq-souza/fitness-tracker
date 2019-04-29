@@ -1,9 +1,30 @@
 <mat-toolbar color="primary">
-    <div><button>Toggle Sidenav</button></div>
-    <div>LOGO</div>
     <div>
-        <a href="auth/signup">Signup</a>
-        <a href="auth/login">Login</a>
-        <a href="/training">Trainig</a>
+        <button 
+            mat-icon-button
+            fxHide.gt-xs
+            (click)="onToggleSidenav()">
+            <mat-icon>menu</mat-icon>
+        </button>
+    </div>
+    <div>
+        <a routerLink="/">LOGO</a>
+    </div>
+    <div 
+        fxFlex
+        fxLayout
+        fxLayoutAlign="flex-end"
+        fxHide.xs>
+        <ul 
+            fxLayout
+            fxLayoutGap="10px"
+            class="navigation-items">
+            <li><a routerLink="auth/signup">Signup</a></li>
+            <li><a routerLink="auth/login">Login</a></li>
+            <li><a routerLink="/training">Trainig</a></li>
+            <li><a>Logout</a></li>
+        </ul>
     </div>
 </mat-toolbar>
+
+<!-- Exercise: Split the Toolbar items into components -->

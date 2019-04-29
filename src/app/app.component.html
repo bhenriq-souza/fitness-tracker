@@ -1,71 +1,13 @@
 <mat-sidenav-container>
     <mat-sidenav #sidenav role="navigation">
-        <mat-nav-list>
-            <a 
-                mat-list-item
-                routerLink="auth/signup"
-                (click)="sidenav.close()">
-                <mat-icon >face</mat-icon>
-                <span class="nav-caption">Signup</span>
-            </a>
-            <a 
-                mat-list-item
-                routerLink="auth/login"
-                (click)="sidenav.close()">
-                <mat-icon class="nav-caption">input</mat-icon>
-                <span class="nav-caption">Login</span>
-            </a>
-            <a 
-                mat-list-item
-                routerLink="/training/new"
-                (click)="sidenav.close()">
-                <mat-icon class="nav-caption">fitness_center</mat-icon>
-                <span class="nav-caption">Training</span>
-            </a>
-            <a 
-                mat-list-item
-                (click)="sidenav.close()">
-                <mat-icon class="nav-caption">eject</mat-icon>
-                <span class="nav-caption">Logout</span>
-            </a>
-        </mat-nav-list>
+        <app-sidenav-list (sidenavToggle)="sidenav.toggle()"></app-sidenav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-        <mat-toolbar color="primary">
-            <div>
-                <button 
-                    mat-icon-button
-                    fxHide.gt-xs
-                    (click)="sidenav.toggle()">
-                    <mat-icon>menu</mat-icon>
-                </button>
-            </div>
-            <div>
-                <a routerLink="/">LOGO</a>
-            </div>
-            <div 
-                fxFlex
-                fxLayout
-                fxLayoutAlign="flex-end"
-                fxHide.xs>
-                <ul 
-                    fxLayout
-                    fxLayoutGap="10px"
-                    class="navigation-items">
-                    <li><a routerLink="auth/signup">Signup</a></li>
-                    <li><a routerLink="auth/login">Login</a></li>
-                    <li><a routerLink="/training">Trainig</a></li>
-                    <li><a>Logout</a></li>
-                </ul>
-            </div>
-        </mat-toolbar>
+        <app-toolbar (sidenavToggle)="sidenav.toggle()"></app-toolbar>
         <main>
             <router-outlet></router-outlet>
         </main>
     </mat-sidenav-content>
 </mat-sidenav-container>
 
-<!-- 
-    As an exercise, uncouple the mat-sidenav-container in a top-level component, which will nest 
-    the router-outlet
--->
+<!-- DONE -->
