@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { ReactiveFormsModule } from '@angular/forms';
 
-/*** App Module */
+/*** App Material Module */
 import { AppMaterialModule } from '../../app-material/app-material.module';
 
 /*** Route Module */
