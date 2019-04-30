@@ -1,3 +1,7 @@
 import { Routes } from '@angular/router';
 
-export const TRAINING_ROUTING: Routes = [];
+import { NewTrainingComponent } from '../';
+
+export const TRAINING_ROUTING: Routes = [
+    { path: 'new', component: NewTrainingComponent }
+];
