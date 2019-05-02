@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter, OnDestroy } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/Subscription';
 
 import { AuthService } from '../../../_core';
 
@@ -22,6 +22,10 @@ export class AppToolbarComponent implements OnInit, OnDestroy {
 
   onToggleSidenav() {
     this.sidenavToggle.emit();
+  }
+
+  onLogout() {
+    this.authSerive.logout();
   }
 
   ngOnDestroy() {

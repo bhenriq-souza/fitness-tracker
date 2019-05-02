@@ -24,6 +24,11 @@ export class AppSideNavListComponent implements OnInit, OnDestroy {
     this.sidenavToggle.emit();
   }
 
+  onLogout() {
+    this.authSerive.logout();
+    this.onClose();
+  }
+
   ngOnDestroy() {
     this.authSubscription.unsubscribe();
   }

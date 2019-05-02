@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { Subject } from 'rxjs';
+import { Subject } from 'rxjs/Subject';
 
 import { IUser, IAuth } from '../_models';
 
@@ -16,7 +16,7 @@ export class AuthService {
             email: authData.email,
             userId: Math.round(Math.random() * 1000).toString()
         };
-        this.onAuthSuccessfully();
+        this.onAuthChanged(true, '/training');
     }
 
     login(authData: IAuth) {
@@ -24,13 +24,12 @@ export class AuthService {
             email: authData.email,
             userId: Math.round(Math.random() * 1000).toString()
         };
-        this.onAuthSuccessfully();
+        this.onAuthChanged(true, '/training');
     }
 
     logout() {
         this.user = null;
-        this.authChange.next(false);
-        this.router.navigate(['/auth/login']);
+        this.onAuthChanged(false, '/auth/login');
     }
 
     getUser() {
@@ -41,8 +40,8 @@ export class AuthService {
         return this.user != null;
     }
 
-    private onAuthSuccessfully() {
-        this.authChange.next(true);
-        this.router.navigate(['/training']);
+    private onAuthChanged(isAuth: boolean, navigate: string = null): void {
+        this.authChange.next(isAuth);
+        if (navigate) this.router.navigate([navigate]);
     }
 }
