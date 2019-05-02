@@ -13,19 +13,24 @@ import { CurrentTrainingComponent } from './current-training/current-training.co
 import { NewTrainingComponent } from './new-training/new-training.component';
 import { PastTrainingsComponent } from './past-trainings/past-trainings.component';
 import { TrainingComponent } from './training/training.component';
+import { StopTrainingDialogComponent } from './current-training/stop-training-dialog/stop-training-dialog.component';
 
 @NgModule({
   declarations: [
     CurrentTrainingComponent, 
     NewTrainingComponent, 
     PastTrainingsComponent, 
-    TrainingComponent
+    TrainingComponent, 
+    StopTrainingDialogComponent
   ],
   imports: [
     CommonModule,
     TrainingRoutingModule,
     AppMaterialModule,
     FlexLayoutModule
+  ],
+  entryComponents: [
+    StopTrainingDialogComponent
   ]
 })
 export class TrainingModule { }
