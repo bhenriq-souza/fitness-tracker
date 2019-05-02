@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 
-import { NewTrainingComponent } from '../';
+import { TrainingComponent } from '../';
 
 export const TRAINING_ROUTING: Routes = [
-    { path: 'new', component: NewTrainingComponent }
+    { path: '', component: TrainingComponent }
 ];

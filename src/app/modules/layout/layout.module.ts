@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
-/*** App Module */
+/*** App Material Module */
 import { AppMaterialModule } from '../../app-material/app-material.module';
 
 /** Module Components */
