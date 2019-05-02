@@ -10,9 +10,6 @@ import { AppMaterialModule } from '../../app-material/app-material.module';
 import { AppSideNavListComponent } from './app-sidenav-list/app-sidenav-list.component';
 import { AppToolbarComponent } from './app-toolbar/app-toolbar.component';
 
-/** Services */
-import { AuthService } from '../../_core';
-
 @NgModule({
   declarations: [
     AppSideNavListComponent, 
@@ -28,8 +25,6 @@ import { AuthService } from '../../_core';
     AppSideNavListComponent,
     AppToolbarComponent
   ],
-  providers: [
-    AuthService
-  ]
+  providers: []
 })
 export class AppLayoutModule { }

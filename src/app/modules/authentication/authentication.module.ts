@@ -14,9 +14,6 @@ import { AuthenticationRoutingModule } from './_routing/authentication.routing.m
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
 
-/** Services */
-import { AuthService } from '../../_core';
-
 @NgModule({
   declarations: [
     SignupComponent,
@@ -30,8 +27,6 @@ import { AuthService } from '../../_core';
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [
-    AuthService
-  ]
+  providers: []
 })
 export class AuthenticationModule { }

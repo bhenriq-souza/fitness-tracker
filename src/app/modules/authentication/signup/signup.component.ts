@@ -93,7 +93,6 @@ export class SignupComponent implements OnInit {
     }
   }
 
-
   setMinage(amount: number) {
     const actualDate = new Date();
     this.minDate = new Date();

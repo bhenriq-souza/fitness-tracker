@@ -10,6 +10,8 @@ import { AppMaterialModule } from './app-material/app-material.module';
 import { AppLayoutModule } from './modules/layout/layout.module';
 import { DateLocaleProvider } from './_core'
 
+import { AuthService } from './_core';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -23,7 +25,8 @@ import { DateLocaleProvider } from './_core'
     AppLayoutModule
   ],
   providers: [
-    DateLocaleProvider
+    DateLocaleProvider,
+    AuthService
   ],
   bootstrap: [AppComponent]
 })
