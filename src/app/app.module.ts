@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing/app-routing.module';
 import { AppMaterialModule } from './app-material/app-material.module';
 import { AppLayoutModule } from './modules/layout/layout.module';
-import { DateLocaleProvider } from '../app/_helpers'
+import { DateLocaleProvider } from './_core'
 
 @NgModule({
   declarations: [
