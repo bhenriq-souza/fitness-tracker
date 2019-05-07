@@ -24,6 +24,7 @@ import { AppToolbarComponent } from './app-toolbar/app-toolbar.component';
   exports: [
     AppSideNavListComponent,
     AppToolbarComponent
-  ]
+  ],
+  providers: []
 })
 export class AppLayoutModule { }

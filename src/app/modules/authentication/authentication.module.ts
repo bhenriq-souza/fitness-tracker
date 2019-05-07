@@ -26,6 +26,7 @@ import { LoginComponent } from './login/login.component';
     FlexLayoutModule,
     FormsModule,
     ReactiveFormsModule
-  ]
+  ],
+  providers: []
 })
 export class AuthenticationModule { }
