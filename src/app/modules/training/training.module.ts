@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { FlexLayoutModule } from '@angular/flex-layout';
 
 /*** App Material Module */
@@ -15,6 +16,9 @@ import { PastTrainingsComponent } from './past-trainings/past-trainings.componen
 import { TrainingComponent } from './training/training.component';
 import { StopTrainingDialogComponent } from './current-training/stop-training-dialog/stop-training-dialog.component';
 
+/** Services */
+import { TrainingService } from '../../_core';
+
 @NgModule({
   declarations: [
     CurrentTrainingComponent, 
@@ -27,7 +31,11 @@ import { StopTrainingDialogComponent } from './current-training/stop-training-di
     CommonModule,
     TrainingRoutingModule,
     AppMaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule
+  ],
+  providers: [
+    TrainingService
   ],
   entryComponents: [
     StopTrainingDialogComponent
