@@ -1,5 +1,7 @@
 import { Routes } from '@angular/router';
 
+import { AuthGuard } from '../_core'
+
 export const ROUTES: Routes = [
     {
         path: '',
@@ -11,6 +13,7 @@ export const ROUTES: Routes = [
     },
     {
         path: 'training',
-        loadChildren: '../modules/training/training.module#TrainingModule'
+        loadChildren: '../modules/training/training.module#TrainingModule',
+        canActivate: [AuthGuard]
     }
 ];
