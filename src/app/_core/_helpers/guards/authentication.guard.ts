@@ -7,7 +7,6 @@ import {    CanActivate,
 
 import { AuthService } from '../../_services';
 
-
 @Injectable()
 export class AuthGuard implements CanActivate {
 
