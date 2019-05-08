@@ -18,6 +18,10 @@ export class TrainingService {
         return this.availableExercises.slice();
     }
 
+    getRunningExercise(): IExercise {
+        return { ...this.runningExercise };
+    }
+
     startExercise(exerciseId: string): void {
         const selectedExercise = this.availableExercises.find(exerc => exerc.id === exerciseId);
         this.runningExercise = selectedExercise ? selectedExercise : null;
