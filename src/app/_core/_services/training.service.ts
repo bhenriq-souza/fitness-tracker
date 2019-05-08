@@ -4,6 +4,7 @@ import { IExercise } from '../_models';
 
 @Injectable()
 export class TrainingService {
+    private runningExercise: IExercise;
     private availableExercises: IExercise[] = [
         { id: 'crunches', name: 'Crunches', duration: 30, calories: 8 },
         { id: 'touch-toes', name: 'Touch Toes', duration: 180, calories: 15 },
@@ -11,7 +12,12 @@ export class TrainingService {
         { id: 'burpees', name: 'Burpees', duration: 60, calories: 8 }
     ];
 
-    getAvailableExercises() {
+    getAvailableExercises(): IExercise[] {
         return this.availableExercises.slice();
+    }
+
+    startExercise(exerciseId: string): void {
+        const selectedExercise = this.availableExercises.find(exerc => exerc.id === exerciseId);
+        this.runningExercise = selectedExercise ? selectedExercise : null;
     }
 }
