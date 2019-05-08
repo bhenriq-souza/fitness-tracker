@@ -7,6 +7,7 @@ import { IExercise } from '../_models';
 export class TrainingService {
     exerciseChanged: Subject<IExercise> = new Subject<IExercise>();
     private runningExercise: IExercise;
+    private storedExercises: IExercise[] = [];
     private availableExercises: IExercise[] = [
         { id: 'crunches', name: 'Crunches', duration: 30, calories: 8 },
         { id: 'touch-toes', name: 'Touch Toes', duration: 180, calories: 15 },
@@ -26,5 +27,27 @@ export class TrainingService {
         const selectedExercise = this.availableExercises.find(exerc => exerc.id === exerciseId);
         this.runningExercise = selectedExercise ? selectedExercise : null;
         this.exerciseChanged.next({ ...this.runningExercise });
+    }
+
+    completeExercise(): void {
+        this.storedExercises.push({
+            ...this.runningExercise,
+            date: new Date(),
+            state: "completed"
+        });
+        this.runningExercise = null;
+        this.exerciseChanged.next(null);
+    }
+
+    cancelExercise(progress: number): void {
+        this.storedExercises.push({
+            ...this.runningExercise,
+            duration: this.runningExercise.duration * (progress / 100),
+            calories: this.runningExercise.duration * (progress / 100),
+            date: new Date(),
+            state: "cancelled"
+        });
+        this.runningExercise = null;
+        this.exerciseChanged.next(null);
     }
 }
