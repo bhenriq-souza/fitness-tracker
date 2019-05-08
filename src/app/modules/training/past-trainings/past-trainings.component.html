@@ -1,3 +1,36 @@
-<p>
-  past-trainings works!
-</p>
+<mat-table [dataSource]="dataSource">
+
+  <!-- Date -->
+  <ng-container matColumnDef="date">
+    <mat-header-cell *matHeaderCellDef> Date </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.date | date }} </mat-cell>
+  </ng-container>
+  
+  <!-- Name -->
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.name }} </mat-cell>
+  </ng-container>
+  
+  <!-- Calories -->
+  <ng-container matColumnDef="calories">
+    <mat-header-cell *matHeaderCellDef> Calories </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.calories | number }} </mat-cell>
+  </ng-container>
+
+  <!-- Duration -->
+  <ng-container matColumnDef="duration">
+    <mat-header-cell *matHeaderCellDef> Duration </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.duration | number }} </mat-cell>
+  </ng-container>
+
+  <!-- State -->
+  <ng-container matColumnDef="state">
+    <mat-header-cell *matHeaderCellDef> State </mat-header-cell>
+    <mat-cell *matCellDef="let row"> {{ row.state }} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+
+</mat-table>

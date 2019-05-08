@@ -23,6 +23,10 @@ export class TrainingService {
         return { ...this.runningExercise };
     }
 
+    getStoredExercises(): IExercise[] {
+        return this.storedExercises.slice();
+    }
+
     startExercise(exerciseId: string): void {
         const selectedExercise = this.availableExercises.find(exerc => exerc.id === exerciseId);
         this.runningExercise = selectedExercise ? selectedExercise : null;
@@ -43,7 +47,7 @@ export class TrainingService {
         this.storedExercises.push({
             ...this.runningExercise,
             duration: this.runningExercise.duration * (progress / 100),
-            calories: this.runningExercise.duration * (progress / 100),
+            calories: this.runningExercise.calories * (progress / 100),
             date: new Date(),
             state: "cancelled"
         });
